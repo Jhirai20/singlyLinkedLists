@@ -11,9 +11,13 @@ namespace SinglyLinkedLists
             list.Add(1);
             list.Add(2);
             list.Add(3);
-            Console.WriteLine(list.Find(2).Value) ;
+            list.Add(4);
+            list.Add(5);
+            // Console.WriteLine(list.Find(2).Value) ;
             list.PrintValues();
-            list.Remove();
+            // list.Remove();
+            
+            list.RemoveAt(0);
             list.PrintValues();
         }
     }

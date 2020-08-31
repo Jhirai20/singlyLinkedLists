@@ -79,13 +79,44 @@ namespace SinglyLinkedLists
             Console.WriteLine("Value not found!");
             return null;
         }
+        public int Length()
+        {
+            int length=0;
+            SllNode runner=Head;
+            while (runner.Next!=null)
+            {
+                runner=runner.Next;
+                length++;
+            }
+            return length;
+        }
         public void RemoveAt(int n)
         {
-            int count=0;
-            SllNode runner=Head;
-            while(runner.Next!=null)
+            if(Head != null)
             {
-                
+                SllNode runner=Head;
+                int index=0;
+                //if out of bounds
+                if (n>this.Length())
+                {
+                    Console.WriteLine("Node index is out of bounds!");
+                    return;
+                }
+                else if (n==0)
+                {
+                    Head=Head.Next;
+                    runner=null;
+                }
+                //Multi node list
+                else
+                {
+                    while (index+1!=n)
+                    {
+                        runner=runner.Next;
+                        index++;
+                    }
+                    runner.Next=runner.Next.Next;
+                }
             }
 
 
